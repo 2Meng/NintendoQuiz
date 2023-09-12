@@ -39,5 +39,29 @@ body section button:hover {
   display: none;
 }
 
+#quiz-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#main {
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 50px;
+  text-shadow: 0.5px 0.5px;
+}
+
 .answer-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.answer-btns button {
+  margin: 50px;
+  padding: 25px 50px;
+  font-size: 15px;
 }
