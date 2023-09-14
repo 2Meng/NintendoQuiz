@@ -1,10 +1,13 @@
 "use scrict";
 const quizText = document.getElementById("main");
-const nextQuestionBtn = document.querySelector(".next-question-btn");
+const showScoreBtn = document.querySelector(".show-score-btn");
 const startQuizBtn = document.querySelector(".start-quiz-btn");
 const startOverBtn = document.querySelector(".start-over-btn");
 const answerBtns = document.querySelector(".answer-btns");
 const time = document.querySelector(".time");
+const displayScores = document.querySelector(".scores");
+const submitUsername = document.querySelector(".submit-name");
+const nameInput = document.querySelector(".name-input");
 
 // Variables
 let score = 0;
@@ -133,6 +136,7 @@ function getAnswers() {
       } else {
         quizText.textContent = `Quiz completed! Your score: ${score} out of ${quizQuestions.length}`;
         startOverBtn.style.display = "block";
+        time.style.display = "none";
       }
     });
   }
@@ -189,3 +193,20 @@ function startCountdown() {
     }
   }, 1000); // Update the timer every 1000 milliseconds (1 second)
 }
+
+showScoreBtn.addEventListener("click", function () {
+  const storedScore = JSON.parse(localStorage.getItem("userScores"));
+  if (storedScore) {
+    displayScores.textContent = storedScore;
+  }
+});
+
+submitUsername.addEventListener("click", function (e) {
+  e.preventDefault();
+  const username = nameInput.value;
+  const storedData = JSON.parse(localStorage.getItem("userScores")) || {};
+
+  storedData[username] = score;
+
+  localStorage.setItem("userScores", JSON.stringify(storedData));
+});

@@ -9,7 +9,7 @@
   <body>
     <nav>
       <h1>Nintendo Game Quiz</h1>
-      <span>Timer: <span class="time"></span></span>
+      <span class="timer">Timer: <span class="time"></span></span>
     </nav>
     <section id="quiz-section">
       <p id="main">
@@ -18,9 +18,13 @@
         <span>"Start"</span> button to begin!
       </p>
       <div class="answer-btns"></div>
-
+      <form>
+        Enter name: <input type="text" class="name-input" />
+        <input type="submit" class="submit-name" />
+      </form>
+      <div class="scores"></div>
       <button class="start-quiz-btn">Start</button>
-      <button class="next-question-btn">Next</button>
+      <button class="show-score-btn">Show Score</button>
       <button class="start-over-btn">Start Over</button>
     </section>
     <script src="/script.js"></script>

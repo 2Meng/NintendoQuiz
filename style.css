@@ -65,3 +65,15 @@ body section button:hover {
   padding: 25px 50px;
   font-size: 15px;
 }
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+nav .timer {
+  font-size: 2em;
+  margin-top: 30px;
+}
